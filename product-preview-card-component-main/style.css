@@ -1,0 +1,126 @@
+:root{
+    --mont: 'Montserrat', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+body{
+    background-color: #F2E9E2;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    min-height: 100vh;
+
+}
+
+.container{
+    display: flex;
+    background-color: #FFFFFF;
+    width: 600px;
+    border-radius: 10px ;
+}
+
+.img-container{
+    background-image: url('images/image-product-desktop.jpg');
+    background-size: cover;
+    background-position: center ;
+    width: 50%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.text-container{
+    font-family: var(--mont);
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    row-gap: 20px;
+    width: 50%;
+}
+
+h2{
+    color: #777;
+    font-size: 14px;
+    letter-spacing: 4px;
+}
+
+h1{
+    font-size: 28px;
+}
+
+p{
+    font-size: 16px;
+    color: #777;
+}
+
+.numbers-container{
+}
+
+#new-price{
+    font-size: 30px;
+    color: #447665;
+    padding-right: 8px;
+}
+
+#old-price{
+    font-size: 18px;
+    color: #777;
+    text-decoration: line-through;
+}
+
+#purchase-button{
+    background-color: #3D8168;
+    color: white;
+    width: 270px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    transition: .5s;
+    font-weight: bolder;
+}
+
+#purchase-button:hover{
+    background-color: #386657;
+    cursor: pointer;
+}
+
+@media (max-width: 600px){
+.container{
+    margin: 2em 0;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}    
+
+.img-container{
+    background-image: url('images/image-product-mobile.jpg');
+    background-size: cover;
+    background-position: center ;
+    height: 350px;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 0;
+}
+
+picture img, source{
+    width: 350px;
+    border-radius: 10px 10px 0 0;
+}
+
+.text-container{
+    margin: 0 20px ;
+}
+
+p{
+    font-size: 18px;
+}
+
+#purchase-button{
+    margin-bottom: 20px;
+}
+
+}

@@ -1,0 +1,132 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+:root{
+    --Pale-blue: hsl(225, 100%, 94%);
+    --Bright-blue: hsl(245, 75%, 52%);
+    --Very-pale-blue: hsl(225, 100%, 98%);
+    --Desaturated-blue: hsl(224, 23%, 55%);
+    --Dark-blue: hsl(223, 47%, 23%);
+
+    --reg-font-size: 16px;
+    --reg-font: 'Red Hat Display' sans-serif;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    background-color: var(--Pale-blue);
+    justify-content: center;
+    align-items: center;
+    font-family: 'Red Hat Display';
+    background-image: url('../images/pattern-background-desktop.svg');
+    background-repeat: no-repeat;
+
+}
+
+.container{
+    display: flex;
+    height: 600px;
+    width:400px;
+    background-color: white;
+    flex-direction: column;
+    row-gap: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.151);
+}
+
+.img-container{
+    width: 100%;
+}
+
+img{
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.text-container{
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.text-container h1{
+    margin-bottom: 10px;
+}
+
+.text-container p{
+    color: gray;
+}
+
+.plan-container{
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--Very-pale-blue
+    );
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    border-radius: 10px;
+}
+
+.plan-container img{
+    width: 50px;
+}
+
+.plan-container p,.plan-container  a{
+    display: inline-block;
+}
+
+.plan-container strong{
+    color: gray;
+    font-weight: normal;
+}
+
+.buttons-container{
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+#pay{
+    background-color: var(--Bright-blue);
+    color: white;
+    padding: 15px;
+    border: none;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.068);
+    transition: .5s;
+}
+
+#pay:hover{
+    background-color: var(--Dark-blue);
+    cursor: pointer;
+}
+
+#cancel{
+    border: none;
+    background-color: transparent;
+    font-weight: bold;
+    color: var(--Desaturated-blue);
+    padding: 10px;
+    transition: .5s;
+}
+
+#cancel:hover{
+    background-color: rgba(128, 128, 128, 0.322);
+    cursor: pointer;
+    border-radius: 10px;
+}
