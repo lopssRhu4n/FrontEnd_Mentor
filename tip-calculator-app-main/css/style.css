@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+
+
+:root{
+
+--strong-cyan: hsl(172, 67%, 45%);
+
+
+--very-dark-cyan: hsl(183, 100%, 15%);
+--dark-grayish-cyan: hsl(186, 14%, 43%);
+--grayish-cyan: hsl(184, 14%, 56%);
+--light-grayish-cyan: hsl(185, 41%, 84%);
+--very-light-grayish-cyan: hsl(189, 41%, 97%);
+--white: hsl(0, 0%, 100%);
+
+--font-normal-family:  'Space Mono', monospace;
+--font-size-input: 24px;
+
+}
+
+
+*{
+    margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+    font-family: var(--font-normal-family);
+}
+
+.page-container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--light-grayish-cyan);
+}
+
+main{
+    width: 70vw;
+    height: 60vh;
+    display: flex;
+    background-color: var(--white);
+    padding: 30px 50px;
+    border-radius: 20px;
+}
+
+.container{
+    width: 50%;
+    margin: 20px;
+}
+
+#main-form{
+    height: 90%;
+    width: 90%;
+}
+
+#main-form div{
+    margin: 15px 0;
+}
+
+input[type=number]{
+    background-color: var(--very-light-grayish-cyan);
+    width: 90%;
+    height: 20%;
+    padding: 10px;
+    border-radius: 3px;
+    text-align: right;
+    transition: 200ms;
+}
+
+input[type=number]:hover{
+    outline: 1px solid var(--grayish-cyan);
+}
+
+input[type=number]::placeholder{
+    color: var(--very-dark-cyan);
+    position: absolute;
+    right: 5%;
+}
+
+input[type=text]:focus, input[type=number]:focus{
+    outline: 1px solid var(--dark-grayish-cyan);
+    cursor: pointer;
+}
+
+/* #bill-input{
+    background-image: url(../images/icon-dollar.svg);
+    background-position: 7px 7px;
+    background-repeat: no-repeat;
+} */
+
+.icon-input{
+    display: block;
+    position: absolute;
+    top: 40px;
+    left: 10px;
+}
+
+.input-container{
+    position: relative;
+}
+
+
+.label-bill{
+    display: block;
+    margin-bottom: 5px;
+}
+
+#select-tip-container{
+    height: 50%;
+
+}
+
+#tip-buttons-container{
+    height: 50%;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    gap: 5%;
+}
+
+.tip-percentage-button{
+    display: block;
+    border-radius: 5px;
+    color: var(--white);
+    background-color: var(--very-dark-cyan);
+    transition: 500ms;
+}
+
+
+.tip-percentage-button:hover{
+    cursor: pointer;
+    background-color: var(--strong-cyan);
+}
+
+#custom-button{
+    background-color: var(--light-grayish-cyan);
+    color: var(--very-dark-cyan);    
+}
+
+#custom-button:hover{
+    outline: 1px solid var(--dark-grayish-cyan);
+}
+
+#tip-info-container{
+    background-color: var(--very-dark-cyan);
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+}
+
+#info-container, #reset-container{
+    display: flex;
+    width: 90%;
+    height: 90%;
+    margin: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(var(--font-size-input/2));
+}
+
+#info-container{
+    justify-content: space-around;
+}
+
+
+.info{
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+}
+
+h4{
+    color: var(--white);
+    font-size: calc(var(--font-size-input)/1.6);
+}
+
+.info p{
+    color: var(--grayish-cyan);
+    font-size: calc(var(--font-size-input)/2);
+}
+
+#reset-container{
+    justify-content: end;
+}
+
+#reset-button{
+    width: 80%;
+    height: 50px;
+    background-color: var(--strong-cyan);
+    color: var(--very-dark-cyan);
+    border-radius: 5px;
+    margin-bottom: 20px;
+    transition: 500ms;
+}
+
+#reset-button:hover{
+    background-color: var(--light-grayish-cyan);
+    cursor: pointer;
+}
+
+.result{
+    color: var(--strong-cyan);
+    font-size: calc(var(--font-size-input)*1.5);
+}
+
+.error-msg{
+    position: absolute;
+    right: 15px;
+    top: -2px;
+    display: none;
+}
+
+.error-passed{
+    color: var(--strong-cyan);
+    outline: 1px solid var(--strong-cyan);
+}
+
+.error-failed{
+    display: block;
+    color: rgba(245, 6, 6, 0.731);
+}
+
