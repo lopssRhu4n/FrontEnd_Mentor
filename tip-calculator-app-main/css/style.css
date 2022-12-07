@@ -58,7 +58,7 @@ main{
     margin: 15px 0;
 }
 
-input[type=number]{
+#bill-input, #people-input{
     background-color: var(--very-light-grayish-cyan);
     width: 90%;
     height: 20%;
@@ -70,23 +70,19 @@ input[type=number]{
      -moz-appearance: textfield;
           appearance: textfield;
 }
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none;
-  appearance: textfield ;
-}
 
-input[type=number]:hover{
+
+#bill-input:hover, #people-input:hover{
     outline: 1px solid var(--grayish-cyan);
 }
 
-input[type=number]::placeholder{
+#bill-input::placeholder, #people-input::placeholder{
     color: var(--very-dark-cyan);
     position: absolute;
     right: 5%;
 }
 
-input[type=text]:focus, input[type=number]:focus{
+#people-input:focus, #bill-input:focus{
     outline: 1px solid var(--dark-grayish-cyan);
     cursor: pointer;
 }
@@ -138,15 +134,25 @@ input[type=text]:focus, input[type=number]:focus{
 .tip-percentage-button:hover{
     cursor: pointer;
     background-color: var(--strong-cyan);
+    color: var(--very-dark-cyan);
 }
 
 #custom-button{
     background-color: var(--light-grayish-cyan);
     color: var(--very-dark-cyan);    
+    text-align: right;
+}
+
+#custom-button::placeholder{
+    margin-right: 5px;
 }
 
 #custom-button:hover{
     outline: 1px solid var(--dark-grayish-cyan);
+}
+
+#custom-button:focus{
+    outline: 2px var(--dark-grayish-cyan);
 }
 
 #tip-info-container{
@@ -180,7 +186,7 @@ input[type=text]:focus, input[type=number]:focus{
 
 h4{
     color: var(--white);
-    font-size: calc(var(--font-size-input)/1.6);
+    font-size: calc(10vw/5);
 }
 
 .info p{
@@ -209,13 +215,13 @@ h4{
 
 .result{
     color: var(--strong-cyan);
-    font-size: calc(var(--font-size-input)*1.5);
+    font-size: calc(10vw/4.5);
 }
 
 .error-msg{
     position: absolute;
     right: 15px;
-    top: -2px;
+    top: -10px;
     display: none;
 }
 
@@ -236,30 +242,47 @@ h4{
         display: flex;
         justify-content: center;
         align-items: flex-end;
-        width: 90vw;
+        width: 100vw;
         height: 150vh;
         margin: 0;
     }
     main{
         padding: 0;
         width: 100%;
-        height: auto;
-        height: 70vh;
+        height: 100vh;
         flex-direction: column;
+    }
+
+    .input-container{
+        height: 20%;
     }
 
     .container{
         padding: 0;
-        margin: 0;
-        width: 100%;
+        margin: 2% auto;
+        width: 90%;
+        height: 60%;
         border-radius: 0;
     }
 
     #main-form{
-        margin: 0;
+        width: 100%;
+        height: 90%;
     }
 
     #tip-buttons-container{
-        grid-template-columns: 45% 45%;
+        grid-template-columns: 48% 48%;
+    }
+    
+    .icon-input{
+        top: 32px;
+    }
+    
+    #tip-buttons-container{
+        height: 70%;
+    }
+
+    .result{
+        font-size: calc(10vw/1.6);
     }
 }

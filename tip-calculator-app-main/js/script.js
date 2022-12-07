@@ -1,9 +1,13 @@
 var billInput = document.querySelector('#bill-input')
 var peopleInput = document.querySelector('#people-input')
 var mainForm = document.querySelector('#main-form')
-var tipButtons = document.querySelectorAll('.tip-percentage-button')
+var tipButtons = document.querySelectorAll('.tip-reg-button')
 var resetButton = document.querySelector('#reset-button')
+var customButton = document.querySelector('#custom-button')
+
 var errorNumber = document.querySelector('#error-number')
+var errorBill = document.querySelector('#error-bill')
+
 
 var resultTip = document.querySelector('#result-tip')
 var resultTotal = document.querySelector('#result-total')
@@ -14,38 +18,24 @@ var tipValue = 0
 
 
 
-mainForm.addEventListener('submit', (event) =>{
-    event.preventDefault()
-})
 
 function changeTipPercentage(button){
     var tip = parseInt(button.value)
     tipPercentage = tip
 }
 
-tipButtons.forEach((element) =>{
+
+function validate(func){
+
     if(peopleInput.value == 0){
         errorNumber.classList.add('error-failed')
         errorNumber.innerHTML = "Can't be zero or empty!"
+    }else if(billInput.value == 0){
+        errorBill.classList.add('error-failed')
+        errorBill.innerHTML = "Can't be zero or empty!"
     }else{
-    errorNumber.classList.remove('error-failed')
-    element.addEventListener('click', () => {
-        changeTipPercentage(element)
-        calculateTip()
-    })
+        func()
     }
-    
-})
-
-
-function validate(element){
-    if (element.value == 0){
-        window.alert('Não pode ser zero!')
-    }else if(element.value == null){
-        window.alert('Não pode ser nulo!')
-    }
-
-
 }
 
 function calculateTip (){
@@ -77,22 +67,31 @@ function reset(){
 
 }
 
-resetButton.addEventListener('click', reset)
-billInput.addEventListener('input', () => {
-    if(peopleInput.value == 0){
-        errorNumber.classList.add('error-failed')
-        errorNumber.innerHTML = "Can't be zero or empty!"
-    }else{
-    errorNumber.classList.remove('error-failed')
-    calculateTip()
-    }
+
+mainForm.addEventListener('submit', (event) =>{
+    event.preventDefault()
 })
+
+resetButton.addEventListener('click', reset)
+
+billInput.addEventListener('input', () => {
+    validate(calculateTip)
+})
+
 peopleInput.addEventListener('input', () => {
-    if(peopleInput.value == 0){
-        errorNumber.classList.add('error-failed')
-        errorNumber.innerHTML = "Can't be zero or empty!"
-    }else{
-    errorNumber.classList.remove('error-failed')
-    calculateTip()
-    }
+    validate(calculateTip)
+})
+
+
+customButton.addEventListener('input', () =>{
+    changeTipPercentage(customButton)
+    validate(calculateTip)
+})
+
+tipButtons.forEach((element) => {
+    element.addEventListener('click', () => {
+        changeTipPercentage(element)
+        validate(calculateTip())
+    })
+    
 })
