@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="dark-mode">
+<html class="dark-mode" lang="en" >
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
@@ -22,7 +22,10 @@
       
       <div id="dark-mode-check-container">
         <label for="dark-mode-check" class="secondary-text">Dark Mode</label>
-        <input type="checkbox" name="" id="dark-mode-check">
+        <label id="switch" for="dark-mode-check">
+          <input type="checkbox" name="" id="dark-mode-check">
+          <span id="slider"></span>
+        </label>
       </div>
     
     </header>
@@ -30,56 +33,57 @@
     <main>   
       <div id="upper-dashboard">
         
-        <div class="upper-dashboard-item">
-          <small>
+        <div class="upper-dashboard-item" id="facebook-upper-item">
+          <small class="upper-small">
             <img src="images/icon-facebook.svg" class="upper-dashboard-icon" alt="">
             <p class="secondary-text">@nathanf</p>
           </small>
           
           <div class="central-content-div">
             <p class="number-text">1987</p>
-            <p class="secondary-text">Followers</p>
+            <p class="secondary-text caps-text">Followers</p>
           </div>
           <small class="info-number positive-text">12 Today</small>
         </div>
         
-        <div class="upper-dashboard-item">
-          <small>
+        <div class="upper-dashboard-item" id="twitter-upper-item">
+          <small class="upper-small">
             <img src="images/icon-twitter.svg" class="upper-dashboard-icon" alt="">
             <p class="secondary-text">@nathanf</p>
           </small>
 
           <div class="central-content-div">
             <p class="number-text">1044</p>
-            <p class="secondary-text">Followers</p>
+            <p class="secondary-text caps-text">Followers</p>
           </div>
 
           <small class="info-number positive-text">99 Today</small>
         </div >
         
-        <div class="upper-dashboard-item">
-          <small>
+        <div class="upper-dashboard-item" id="instagram-upper-item">
+          <div id="instagram-gradient-div"></div>
+          <small class="upper-small">
             <img src="images/icon-instagram.svg" class="upper-dashboard-icon" alt="">
             <p class="secondary-text">@realnathanf</p>
           </small>
 
           <div class="central-content-div">
             <p class="number-text">11k</p>
-            <p class="secondary-text">Followers</p>
+            <p class="secondary-text caps-text">Followers</p>
           </div>
 
           <small class="info-number positive-text">1099 Today</small>
         </div>
         
-        <div class="upper-dashboard-item">
-          <small>
+        <div class="upper-dashboard-item" id="youtube-upper-item">
+          <small class="upper-small">
             <img src="images/icon-youtube.svg" class="upper-dashboard-icon" alt="">
             <p class="secondary-text">Nathan F.</p></p>
           </small>
 
           <div class="central-content-div">
             <p class="number-text">8239</p>
-            <p class="secondary-text">Subscribers</p>
+            <p class="secondary-text caps-text">Subscribers</p>
           </div>
 
           <small class="info-number negative-text">144 Today</small>
@@ -87,7 +91,7 @@
       </div>
 
       <div id="lower-dashboard">
-        <div><h2>Overview - Today</h2></div>
+        <div id="lower-dashboard-title-container"><h2>Overview - Today</h2></div>
         
         <div id="lower-dashboard-items-container">
           <div class="lower-dashboard-item">
@@ -223,5 +227,7 @@
     </main>
   </div>
   
+<script src="js/script.js"></script>
+
 </body>
 </html>
