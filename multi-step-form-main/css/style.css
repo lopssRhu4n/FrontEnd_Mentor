@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+
+:root{
+
+    /* primary */
+
+--Marine-blue: hsl(213, 96%, 18%);
+--Purplish-blue: hsl(243, 100%, 62%);
+--Pastel-blue: hsl(228, 100%, 84%);
+--Light-blue: hsl(206, 94%, 87%);
+--Strawberry-red: hsl(354, 84%, 57%);
+
+    /* neutral */
+
+
+--Cool-gray: hsl(231, 11%, 63%);
+--Light-gray: hsl(229, 24%, 87%);
+--Magnolia: hsl(217, 100%, 97%);
+--Alabaster: hsl(231, 100%, 99%);
+--White: hsl(0, 0%, 100%);
+
+--Font-normal-size: 16px;
+--Font-normal-family: 'Ubuntu', sans-serif;;
+
+}
+
+.success{
+    background-color: green;
+}
+
+*{
+    margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+    font-family: var(--Font-normal-family);
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+.page-container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--Magnolia);
+}
+
+.select{
+    background-color: var(--Pastel-blue);
+    color: var(--Marine-blue);
+}
+
+main{
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 1p0x 10px 10px var(--Light-gray);
+    width: 800px;
+    height: 500px;
+    display: grid;
+    grid-template-columns: 25% 70%;
+    column-gap: 5%;
+}
+
+.side-bar{
+    background-image: url('../assets/images/bg-sidebar-desktop.svg');
+    background-size: cover;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0.5px 0.5px 10px rgba(0, 0, 0, 0.118);
+}
+
+.side-bar-div{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 20% 60%;
+    justify-content: space-around;
+}
+
+.rounded-number{
+    width: 40px;
+    height: 35px;
+    text-align: center;
+    border-radius: 50%;
+    color: var(--White);
+    border: 1px solid var(--White);
+    box-shadow: 0.5px 0.5px 0.5px var(--Cool-gray);
+}
+
+.side-bar-text small{
+    color: var(--Light-gray);
+    text-transform: uppercase;
+    text-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.178);
+}
+
+.step-info{
+    text-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.178);
+    text-transform: uppercase;
+    color: var(--White);
+    font-size: 15px;
+    font-weight: 700;
+}
+
+#main-form{
+    width: 100%;
+    height: 100%;
+}
+
+.form-step{
+    margin: auto;
+    flex-direction: column;
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.step-header-container{
+    height: 60px;
+}
+
+.form-step-title{
+    text-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.407);
+}
+
+.form-step-subtitle{
+    margin-top: 10px;
+    color: var(--Cool-gray);
+}
+
+.invisible{
+    display: none;
+}
+
+.step-input-container{
+    height: 300px;    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.input-div{
+    height: 70px;
+}
+
+.input-label{
+    display: block;
+    margin-bottom: 5px;
+}
+
+.regular-input{
+    width: 97%;
+    height: 60%;
+    padding: 0px 5px;
+    border-radius: 3px;
+    border: 1px solid var(--Light-gray);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.138);
+}
+
+.regular-input:focus-visible{
+    outline: none;
+}
+
+.next-step-div{
+    height: 44px;
+    display: flex;
+    justify-content: end;
+}
+
+
+.next-step-go-back-div{
+    height: 44px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.next-step{
+    height: 100%;
+    width: 120px;
+    background-color: var(--Marine-blue);
+    color: var(--White);
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px var(--Light-gray);
+    transition: 500ms;
+}
+
+.next-step:hover{
+    background-color: var(--Purplish-blue);
+    cursor: pointer;
+}
+
+.go-back{
+    height: 100%;
+    width: 120px;
+    background-color: var(--White);
+    color: var(--Cool-gray);
+    border-radius: 5px;
+    transition: 500ms;
+}
+
+.go-back:hover{
+    color: var(--Marine-blue);
+    box-shadow: 2px 2px 2px var(--Light-gray);
+
+}
+
+#first-step{
+
+}
+
+
+/* SECOND STEP */
+
+.plan-container{
+    height: 200px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.plan-type{
+    width: 25%;
+    border-radius: 5px;
+    border: 1px solid var(--Pastel-blue);
+    padding: 10px;
+    transition: 500ms;
+}
+
+.plan-type:hover{
+    border: 1px solid var(--Purplish-blue);
+    box-shadow: 10px 10px var(--Light-gray);
+    cursor: pointer;
+}
+
+.plan-icon-div{
+    height: 50%;
+}
+
+.marine-blue{
+    color: var(--Marine-blue);
+}
+
+#switch-container{
+    background-color: var(--Magnolia);
+    display: grid;
+    grid-template-columns: 20% 30% 20%;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 0;
+}
+
+
+.time-period, .price-text{
+    color: var(--Cool-gray);
+}
+
+#switch-label {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    justify-self: center;
+    height: 34px;
+}
+
+#switch-label input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+
+}
+  
+
+#slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    border-radius: 34px;
+    right: 0;
+    bottom: 0;
+    background-color: var(--Marine-blue);
+    background-image: var(--Toggle);
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+#slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--White);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.switch-input:checked + #slider {
+    background-image: var(--Toggle);
+  }
+
+.switch-input:focus + #slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+.switch-input:checked + #slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+
+/* THIRD STEP */
+
+.addons-container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.addon{
+    border: 1px solid var(--Marine-blue);
+    border-radius: 5px;
+    height: 80px;
+    display: grid;
+    grid-template-columns: 20% 60% 10%;
+    align-items: center;
+}
+
+.addon-title, .addon-price{
+    color: var(--Marine-blue);
+}
+
+.addon-subtitle{
+    color: var(--Cool-gray);
+}
+
+.addon-checkbox{
+    height: 20px;
+}
+
+
+/* FOURTH STEP */
+
+/* FIFTH STEP */
+
+.gray{
+    color: var(--Cool-gray);
+}
+
+
+
+#thank-you-img{
+    width: 25%;
+}
+
+#thank-you-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
