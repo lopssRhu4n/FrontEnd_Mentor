@@ -1,75 +1,97 @@
-import { validate } from "./formValidation.js"
-var regularInputs = document.querySelectorAll('.regular-input')
+class UIState {
+    constructor(validator){
+        this.validator = validator
 
-
-const steps = document.querySelectorAll('.form-step')
-const form = document.querySelector('#main-form')
-
-const switchButton =  document.querySelector('#switch')
-const inputDiv = document.querySelector('.input-div')
-
-var timePeriod = 'monthly'
-
-const stepNumbers = document.querySelectorAll('.rounded-number')
-
-var actualStep =  0
-var nextStepID = 0
-
-const nextStepButtons = document.querySelectorAll('.next-step')
-const goBackButtons = document.querySelectorAll('.go-back')
-
-form.addEventListener('submit', (event) =>{
-    event.preventDefault()
-    regularInputs.forEach((input) => validate(input))
-})
-
-function goToNextStep(){
-    steps[actualStep].classList.add('invisible')
-    nextStepID = actualStep + 1
-    steps[nextStepID].classList.remove('invisible')
-    actualStep += 1
-}
-
-function goToLastStep(){
-    steps[actualStep].classList.add('invisible')
-    nextStepID = actualStep - 1
-    steps[nextStepID].classList.remove('invisible')
-    actualStep = nextStepID
-}
-
-nextStepButtons.forEach((button) => {
-    button.addEventListener('click', (e) =>{
-        goToNextStep()
-       
-    })
-    
-})
-
-goBackButtons.forEach((button) => {
-    button.addEventListener('click', (e) =>{
-        goToLastStep()
+        this.steps = document.querySelectorAll('.form-step')
+        this.actualStep = 0
         
-    })
-})
+        this.planPeriod = 'monthly'
+        this.form = document.querySelector('#main-form')
+        
+        this.switchButton = document.querySelector('#switch')
+        
 
+        this.stepInputs = this.steps[this.actualStep].querySelectorAll('input')
 
-switchButton.addEventListener('click', () => {
-    var yearlyPlans = document.querySelectorAll('.yearly')
-    var monthlyPlans = document.querySelectorAll('.monthly')
-    
-    if(switchButton.checked){
-        timePeriod = 'yearly'
-    
-        yearlyPlans.forEach((plan) => plan.classList.remove('invisible'))
-        monthlyPlans.forEach((plan) => plan.classList.add('invisible'))
-    
-    }else if(!switchButton.checked){
-        timePeriod = 'monthly'
+        this.nextStepButtons = document.querySelectorAll('.next-step')
+        this.goBackButtons = document.querySelectorAll('.go-back')
 
-        monthlyPlans.forEach((plan) => plan.classList.remove('invisible'))
-        yearlyPlans.forEach((plan) => plan.classList.add('invisible')) 
+        
 
     }
 
-})
 
+
+    goToNextStep(){
+        this.steps[this.actualStep].classList.add('invisible')
+        this.steps[this.actualStep + 1].classList.remove('invisible')
+        this.actualStep += 1
+        this.stepInputs = this.steps[this.actualStep].querySelectorAll('input')
+        console.log(this.stepInputs)
+    }
+
+    goToLastStep(){
+        this.steps[this.actualStep].classList.add('invisible')
+        this.steps[this.actualStep - 1].classList.remove('invisible')
+        this.actualStep -= 1
+    }
+
+    switchPlanPeriod(){
+
+        var yearlyPlans = document.querySelectorAll('.yearly')
+        var monthlyPlans = document.querySelectorAll('.monthly')
+    
+
+        if(this.switchButton.checked){
+            this.planPeriod = 'yearly'
+        
+            yearlyPlans.forEach((plan) => plan.classList.remove('invisible'))
+            monthlyPlans.forEach((plan) => plan.classList.add('invisible'))
+        
+        }else if(!this.switchButton.checked){
+            this.planPeriod = 'monthly'
+    
+            monthlyPlans.forEach((plan) => plan.classList.remove('invisible'))
+            yearlyPlans.forEach((plan) => plan.classList.add('invisible')) 
+    
+        }        
+    }
+
+    addEvents(){
+
+        this.form.addEventListener('submit', (e) => e.preventDefault())
+
+        this.nextStepButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+            this.validator.validate(this.stepInputs)
+                if (this.validator.errors == 0){
+                    this.goToNextStep()
+                }
+            })
+        })
+
+
+        this.goBackButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                this.goToLastStep()
+            })
+        })
+
+
+        this.switchButton.addEventListener('click', () => {
+            this.switchPlanPeriod()
+        })
+    }
+
+    
+
+}
+
+
+
+
+import { Validator } from "./formValidation.js"
+
+
+
+export { UIState }

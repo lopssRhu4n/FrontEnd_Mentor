@@ -71,7 +71,7 @@
                   </label>
                   <input
                     type="text"
-                    name=""
+                    data-required
                     id="name-input"
                     placeholder="e.g. Stephen King"
                     class="regular-input"
@@ -84,6 +84,7 @@
                   </label>
                   <input
                     type="email"
+                    data-required
                     id="email-input"
                     placeholder="e.g. stephenking@lorem.com"
                     class="regular-input"
@@ -97,7 +98,7 @@
 
                   <input
                     type="tel"
-                    name=""
+                    data-required
                     id="phone-input"
                     placeholder="e.g. +1 234 567 890"
                     class="regular-input"
@@ -120,7 +121,7 @@
               </div>
               <div class="step-input-container">
                 <div class="plan-container">
-                  <div class="plan-type">
+                  <label for="arcade-plan-checkbox" class="plan-type">
                     <div class="plan-icon-div">
                       <img src="assets/images/icon-arcade.svg" alt="" />
                     </div>
@@ -129,11 +130,12 @@
                     <div class="plan-price">
                       <div class="monthly"><p class="price-text">$9/mo</p></div>
 
-                      <div class="yearly"><p class="price-text">$90/yr</p> <p class="marine-blue">2 months free</p></div>
+                      <div class="yearly invisible"><p class="price-text">$90/yr</p> <p class="marine-blue">2 months free</p></div>
                     </div>
-                  </div>
+                    <input type="checkbox" name="" id="arcade-plan-checkbox">
+                  </label>
 
-                  <div class="plan-type">
+                  <label for="advanced-plan-checkbox" class="plan-type">
                     <div class="plan-icon-div">
                       <img src="assets/images/icon-advanced.svg" alt="" />
                     </div>
@@ -142,10 +144,12 @@
                     <div class="plan-price">
                       <div class="monthly"><p class="price-text">$12/mo</p></div>
 
-                      <div class="yearly"><p class="price-text">$120/yr</p> <p class="marine-blue">2 months free</p></div>
+                      <div class="yearly invisible"><p class="price-text">$120/yr</p> <p class="marine-blue">2 months free</p></div>
                     </div>
-                  </div>
-                  <div class="plan-type">
+                    <input type="checkbox" name="" id="advanced-plan-checkbox">
+                  </label>
+                  
+                  <label for="pro-plan-checkbox" class="plan-type">
                     <div class="plan-icon-div">
                       <img src="assets/images/icon-pro.svg" alt="" />
                     </div>
@@ -153,11 +157,12 @@
                     <h3 class="marine-blue">Pro</h3>
                     <div class="monthly"><p class="price-text">$15/mo</p></div>
 
-                    <div class="yearly">
+                    <div class="yearly invisible">
                       <p class="price-text">$150/yr</p>
                       <p class="marine-blue">2 months free</p>
                     </div>
-                  </div>
+                    <input type="checkbox" name="" id="pro-plan-checkbox">
+                  </label>
                 </div>
 
                 <div id="switch-container">
@@ -263,6 +268,6 @@
     Coded by <a href="#">Your Name Here</a>.
   </div> -->
 
-    <script type="module" src="js/UIState.js"></script>
+    <script type="module" src="js/main.js"></script>
   </body>
 </html>

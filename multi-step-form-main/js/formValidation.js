@@ -1,22 +1,57 @@
-function errorValidation(element, message){
-    var error = document.createElement("small")
-    error.innerHTML = message
-    error.classList.add('error')
-    return element.parentElement.append(error);
-}
+class Validator {
+    constructor(){
+        this.validations = ['data-required']
+        this.errors = 0
+    }
 
-function succesValidation(element){
-    element.parentElement.classList.add('success')
-}    
+    errorValidation(element, message){
+        var error = document.createElement("small")
+        error.innerHTML = message
+        error.classList.add('error')
+        element.parentElement.append(error);
+        this.errors++
+        return error
+    }
 
+    succesValidation(element){
+        element.classList.add('success')
+    }
 
-function validate(element){
-    if (element.value === ''){
-        errorValidation(element, "can't be empty")
-        return
-    }else{
-        succesValidation(element)
+    validate(inputs){
+
+        let currentErrors = document.querySelectorAll('.error')
+
+        if(currentErrors.length > 0){
+            this.cleanErrors(currentErrors)
+        }
+
+        inputs.forEach( input => {
+            //verifica quais validações existem
+            for (let i = 0; this.validations.length > i; i++){
+                if(input.getAttribute(this.validations[i]) != null){
+
+                    var method = this.validations[i].replace('data-', '')
+                    
+                    this[method](input)
+                }
+            }
+        });
+    }
+
+    required(input){
+        if(input.value == ""){
+            return this.errorValidation(input, "Can't be empty")
+        }else{
+            return this.succesValidation(input)
+        
+        }
+    }
+
+    cleanErrors(erros){
+        erros.forEach(error => error.remove())
+        this.errors = 0
     }
 }
 
-export { validate }
+
+export { Validator }
