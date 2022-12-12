@@ -1,9 +1,9 @@
 class UIState {
-    constructor(validator){
+    constructor(validator, priceCalculator){
         this.validator = validator
 
         this.steps = document.querySelectorAll('.form-step')
-        this.actualStep = 0
+        this.actualStep = 1
         
         this.planPeriod = 'monthly'
         this.form = document.querySelector('#main-form')
@@ -15,7 +15,6 @@ class UIState {
 
         this.nextStepButtons = document.querySelectorAll('.next-step')
         this.goBackButtons = document.querySelectorAll('.go-back')
-
         
 
     }
@@ -27,7 +26,6 @@ class UIState {
         this.steps[this.actualStep + 1].classList.remove('invisible')
         this.actualStep += 1
         this.stepInputs = this.steps[this.actualStep].querySelectorAll('input')
-        console.log(this.stepInputs)
     }
 
     goToLastStep(){
@@ -47,7 +45,8 @@ class UIState {
         
             yearlyPlans.forEach((plan) => plan.classList.remove('invisible'))
             monthlyPlans.forEach((plan) => plan.classList.add('invisible'))
-        
+    
+
         }else if(!this.switchButton.checked){
             this.planPeriod = 'monthly'
     
@@ -90,7 +89,8 @@ class UIState {
 
 
 
-import { Validator } from "./formValidation.js"
+import { priceCalculator } from "./priceCalculator.js"
+import { Validator } from "./Validator.js"
 
 
 

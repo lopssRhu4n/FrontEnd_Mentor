@@ -56,7 +56,7 @@
         <!-- Step 1 start -->
         <div id="form-container">
           <form id="main-form">
-            <div id="1" class="form-step">
+            <div  class="form-step invisible">
               <div class="step-header-container">
                 <h2 class="form-step-title">Personal info</h2>
                 <p class="form-step-subtitle">
@@ -112,7 +112,7 @@
             </div>
             <!-- Step 1 end -->
             <!-- Step 2 start -->
-            <div id="2" class="form-step invisible">
+            <div  class="form-step">
               <div class="step-header-container">
                 <h2 class="form-step-title">Select your plan</h2>
                 <p class="form-step-subtitle">
@@ -128,11 +128,20 @@
 
                     <h3 class="marine-blue">Arcade</h3>
                     <div class="plan-price">
-                      <div class="monthly"><p class="price-text">$9/mo</p></div>
-
-                      <div class="yearly invisible"><p class="price-text">$90/yr</p> <p class="marine-blue">2 months free</p></div>
+                      <div class="monthly">
+                        <p class="price-text">$9/mo</p>
+                      </div>
+                      <div class="yearly invisible">
+                        <p class="price-text">$90/yr</p> <p class="marine-blue">2 months free</p>
+                      </div>
+                      <input 
+                        type="radio" 
+                        name="plan-value" 
+                        data-radio
+                        value="arcade" 
+                        id="arcade-plan-checkbox">
                     </div>
-                    <input type="checkbox" name="" id="arcade-plan-checkbox">
+                 
                   </label>
 
                   <label for="advanced-plan-checkbox" class="plan-type">
@@ -142,11 +151,22 @@
 
                     <h3 class="marine-blue">Advanced</h3>
                     <div class="plan-price">
-                      <div class="monthly"><p class="price-text">$12/mo</p></div>
+                      <div class="monthly">
+                        <p class="price-text">$12/mo</p>
+                      </div>
 
-                      <div class="yearly invisible"><p class="price-text">$120/yr</p> <p class="marine-blue">2 months free</p></div>
+                      <div class="yearly invisible">
+                        <p class="price-text">$120/yr</p> 
+                        <p class="marine-blue">2 months free</p>
+                      </div>
+
+                      <input 
+                        type="radio" 
+                        name="plan-value" 
+                        data-radio 
+                        value="advanced"  
+                        id="advanced-plan-checkbox">
                     </div>
-                    <input type="checkbox" name="" id="advanced-plan-checkbox">
                   </label>
                   
                   <label for="pro-plan-checkbox" class="plan-type">
@@ -155,13 +175,22 @@
                     </div>
 
                     <h3 class="marine-blue">Pro</h3>
-                    <div class="monthly"><p class="price-text">$15/mo</p></div>
+                    <div class="monthly">
+                      <p class="price-text">$15/mo</p>
+                    </div>
 
                     <div class="yearly invisible">
                       <p class="price-text">$150/yr</p>
                       <p class="marine-blue">2 months free</p>
                     </div>
-                    <input type="checkbox" name="" id="pro-plan-checkbox">
+                    
+                    <input 
+                    type="radio" 
+                    name="plan-value" 
+                    data-radio
+                    value="pro" 
+                    id="pro-plan-checkbox">
+
                   </label>
                 </div>
 
@@ -186,7 +215,7 @@
             </div>
             <!-- Step 2 end -->
             <!-- Step 3 start -->
-            <div id="3" class="form-step invisible">
+            <div  class="form-step invisible">
               <div class="step-header-container">
                 <h2 class="form-step-title">Pick add-ons</h2>
                 <p class="form-step-subtitle">
@@ -195,30 +224,37 @@
               </div>
               <div class="step-input-container">
                 <div class="addons-container">
-                  <div class="addon">
-                    <input type="checkbox" name="" id="online-service-check" class="addon-checkbox">
+                  <label for="online-service-checkbox" class="addon">
+                    <input type="checkbox" value="online" id="online-service-checkbox" class="addon-checkbox">
                     <div class="addon-text-container">
                       <h3 class="addon-title">Online service</h3>
                       <p class="addon-subtitle">Access to multiplayer games </p>
                     </div>
-                    <p class="addon-price">+$1/mo</p>
-                  </div> 
-                  <div class="addon">
-                    <input type="checkbox" name="" id="larger-storage-checkbox" class="addon-checkbox">
+                    <p class="addon-price monthly">+$1/mo</p>
+                    <p class="addon-price yearly invisible">+$10/yr</p>
+                  </label> 
+                  
+                  <label for="larger-storage-checkbox" class="addon">
+                    <input type="checkbox" value="storage"  id="larger-storage-checkbox" class="addon-checkbox">
                     <div class="addon-text-container">
                       <h3 class="addon-title">Larger storage </h3>
                       <p class="addon-subtitle">Extra 1TB of cloud save </p>
                     </div>
-                    <p class="addon-price">+$2/mo </p>
-                  </div>
-                  <div class="addon">
-                    <input type="checkbox" name="" id="customizable-profile-checkbox" class="addon-checkbox">
+                    <p class="addon-price monthly">+$2/mo </p>
+                    <p class="addon-price yearly invisible">+$20/yr</p>
+                  </label>
+                  
+                  <label for="customizable-profile-checkbox" class="addon">
+                    <input type="checkbox" value="profile"  id="customizable-profile-checkbox" class="addon-checkbox">
                     <div class="addon-text-container">
                       <h3 class="addon-title">Customizable Profile</h3>
                       <p class="addon-subtitle">Custom theme on your profile </p>
                     </div>
-                    <p class="addon-price">+$2/mo</p>
-                  </div> 
+                    <p class="addon-price monthly">+$2/mo</p>
+                    <p class="addon-price yearly invisible">+$20/yr</p>
+                    
+                  </label> 
+                
                 </div>
               </div>
               <div class="next-step-go-back-div">
@@ -228,7 +264,7 @@
             </div>
             <!-- Step 3 end -->
             <!-- Step 4 start -->
-            <div id="4" class="form-step invisible">
+            <div class="form-step invisible">
               <div class="step-header-container">
                 <h2 class="form-step-title">Finishing up</h2>
                 <p class="form-step-subtitle">
@@ -247,7 +283,7 @@
             </div>
             <!-- Step 4 end -->
             <!-- Step 5 start -->
-            <div id="5" class="form-step invisible">
+            <div class="form-step invisible">
               <div id="thank-you-container">
                 <img src="assets/images/icon-thank-you.svg" id="thank-you-img" alt="thank-you-icon">
                 <h1>Thank you!</h1>

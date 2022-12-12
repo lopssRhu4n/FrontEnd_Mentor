@@ -330,6 +330,12 @@ main{
     display: grid;
     grid-template-columns: 20% 60% 10%;
     align-items: center;
+    transition: 500ms;
+}
+
+.addon:hover{
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.137);
+    cursor: pointer;
 }
 
 .addon-title, .addon-price{

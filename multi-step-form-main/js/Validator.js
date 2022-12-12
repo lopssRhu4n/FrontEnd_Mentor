@@ -1,6 +1,6 @@
 class Validator {
     constructor(){
-        this.validations = ['data-required']
+        this.validations = ['data-required', 'data-checkbox']
         this.errors = 0
     }
 
@@ -28,10 +28,11 @@ class Validator {
         inputs.forEach( input => {
             //verifica quais validações existem
             for (let i = 0; this.validations.length > i; i++){
+            
                 if(input.getAttribute(this.validations[i]) != null){
 
                     var method = this.validations[i].replace('data-', '')
-                    
+                    console.log(method)
                     this[method](input)
                 }
             }
@@ -40,12 +41,28 @@ class Validator {
 
     required(input){
         if(input.value == ""){
-            return this.errorValidation(input, "Can't be empty")
+            return this.errorValidation(input, "Field required")
         }else{
             return this.succesValidation(input)
         
         }
     }
+
+    checkbox(input){
+        if(document.querySelectorAll('input[type=checkbox]:checked') == null){
+            console.log('nada selecionado')
+        }
+    }
+
+
+    radio(input){
+        console.log('AAAAAAAAAAA')
+        if(document.querySelectorAll('input[name=plan-value]:checked') == null){
+            console.log('Não selecionou nada')
+        }
+    }
+
+
 
     cleanErrors(erros){
         erros.forEach(error => error.remove())
