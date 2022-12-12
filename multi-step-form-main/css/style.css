@@ -28,6 +28,10 @@
     background-color: green;
 }
 
+.error{
+    color: var(--Strawberry-red);
+}
+
 *{
     margin: 0;
 	padding: 0;

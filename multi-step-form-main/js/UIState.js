@@ -1,3 +1,7 @@
+import { validate } from "./formValidation.js"
+var regularInputs = document.querySelectorAll('.regular-input')
+
+
 const steps = document.querySelectorAll('.form-step')
 const form = document.querySelector('#main-form')
 
@@ -16,28 +20,8 @@ const goBackButtons = document.querySelectorAll('.go-back')
 
 form.addEventListener('submit', (event) =>{
     event.preventDefault()
+    regularInputs.forEach((input) => validate(input))
 })
-
-
-function errorValidation(element, message){
-    error = document.createElement(errorTag)
-    error.innerHTML = message
-    return element.parentElement.append(error);
-}
-
-function succesValidation(element){
-    element.parentElement.classList.add('success')
-}    
-
-
-function validate(element){
-    if (element.value === ''){
-        errorValidation(element, "can't be empty")
-        return false
-    }else{
-        succesValidation(element)
-    }
-}
 
 function goToNextStep(){
     steps[actualStep].classList.add('invisible')

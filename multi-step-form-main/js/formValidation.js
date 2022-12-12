@@ -1,12 +1,7 @@
-var regularInputs = document.querySelectorAll('.regular-input')
-
-errorTag = "small"
-
-
-
 function errorValidation(element, message){
-    error = document.createElement(errorTag)
+    var error = document.createElement("small")
     error.innerHTML = message
+    error.classList.add('error')
     return element.parentElement.append(error);
 }
 
@@ -24,6 +19,4 @@ function validate(element){
     }
 }
 
-form.addEventListener('submit', () => {
-    regularInputs.forEach((input) => validate(input))
-})
+export { validate }
