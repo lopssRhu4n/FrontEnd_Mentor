@@ -56,7 +56,7 @@
         <!-- Step 1 start -->
         <div id="form-container">
           <form id="main-form">
-            <div  class="form-step invisible">
+            <div  class="form-step">
               <div class="step-header-container">
                 <h2 class="form-step-title">Personal info</h2>
                 <p class="form-step-subtitle">
@@ -112,7 +112,7 @@
             </div>
             <!-- Step 1 end -->
             <!-- Step 2 start -->
-            <div  class="form-step">
+            <div  class="form-step invisible">
               <div class="step-header-container">
                 <h2 class="form-step-title">Select your plan</h2>
                 <p class="form-step-subtitle">
@@ -186,7 +186,7 @@
                     
                     <input 
                     type="radio" 
-                    name="plan-value" 
+                    name="plan-value"
                     data-radio
                     value="pro" 
                     id="pro-plan-checkbox">
@@ -225,17 +225,31 @@
               <div class="step-input-container">
                 <div class="addons-container">
                   <label for="online-service-checkbox" class="addon">
-                    <input type="checkbox" value="online" id="online-service-checkbox" class="addon-checkbox">
+                    
+                    <input 
+                    type="checkbox"
+                    value="online_service" 
+                    id="online-service-checkbox" 
+                    class="addon-checkbox"
+                    >
+
                     <div class="addon-text-container">
                       <h3 class="addon-title">Online service</h3>
                       <p class="addon-subtitle">Access to multiplayer games </p>
                     </div>
+                   
                     <p class="addon-price monthly">+$1/mo</p>
                     <p class="addon-price yearly invisible">+$10/yr</p>
+                  
                   </label> 
                   
                   <label for="larger-storage-checkbox" class="addon">
-                    <input type="checkbox" value="storage"  id="larger-storage-checkbox" class="addon-checkbox">
+                    <input 
+                    type="checkbox" 
+                    value="larger_storage"  
+                    id="larger-storage-checkbox" 
+                    class="addon-checkbox"
+                    >
                     <div class="addon-text-container">
                       <h3 class="addon-title">Larger storage </h3>
                       <p class="addon-subtitle">Extra 1TB of cloud save </p>
@@ -245,7 +259,12 @@
                   </label>
                   
                   <label for="customizable-profile-checkbox" class="addon">
-                    <input type="checkbox" value="profile"  id="customizable-profile-checkbox" class="addon-checkbox">
+                    <input 
+                    type="checkbox" 
+                    value="customizable_profile"  
+                    id="customizable-profile-checkbox" 
+                    class="addon-checkbox"
+                    >
                     <div class="addon-text-container">
                       <h3 class="addon-title">Customizable Profile</h3>
                       <p class="addon-subtitle">Custom theme on your profile </p>
@@ -273,8 +292,13 @@
                 </div>
                 <div class="step-input-container">
 
+                  <div id="selected-div">
+                  </div>
                   
-                  <div class="total-div">Total (per month/year)</div> 
+                  <div id="total-div">
+                    <p id="total-text"></p>
+                    
+                  </div> 
                 </div>
               <div class="next-step-go-back-div">
                 <button class="go-back">Go Back</button>

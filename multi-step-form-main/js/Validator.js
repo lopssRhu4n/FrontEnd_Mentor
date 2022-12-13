@@ -28,11 +28,9 @@ class Validator {
         inputs.forEach( input => {
             //verifica quais validações existem
             for (let i = 0; this.validations.length > i; i++){
-            
                 if(input.getAttribute(this.validations[i]) != null){
 
                     var method = this.validations[i].replace('data-', '')
-                    console.log(method)
                     this[method](input)
                 }
             }
@@ -45,12 +43,6 @@ class Validator {
         }else{
             return this.succesValidation(input)
         
-        }
-    }
-
-    checkbox(input){
-        if(document.querySelectorAll('input[type=checkbox]:checked') == null){
-            console.log('nada selecionado')
         }
     }
 
