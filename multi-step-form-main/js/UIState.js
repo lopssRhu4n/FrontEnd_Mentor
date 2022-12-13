@@ -3,6 +3,8 @@ class UIState {
         this.validator = validator
         this.calculator = priceCalculator
 
+        this.roundedNumbers = document.querySelectorAll('.rounded-number')
+
         this.steps = document.querySelectorAll('.form-step')
         this.actualStep = 0
         
@@ -30,6 +32,11 @@ class UIState {
             this.mountResumePage()
         }
         this.steps[this.actualStep + 1].classList.remove('invisible')
+
+        if(this.actualStep +1 != 4){
+            this.roundedNumbers[this.actualStep].classList.remove('select')
+            this.roundedNumbers[this.actualStep + 1].classList.add('select')
+        }
         this.actualStep += 1
         this.stepInputs = this.steps[this.actualStep].querySelectorAll('input')
 

@@ -82,6 +82,9 @@ main{
 .rounded-number{
     width: 40px;
     height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     border-radius: 50%;
     color: var(--White);
@@ -206,11 +209,6 @@ main{
     box-shadow: 2px 2px 2px var(--Light-gray);
 
 }
-
-#first-step{
-
-}
-
 
 /* SECOND STEP */
 
@@ -427,3 +425,5 @@ main{
 .error{
     color: var(--Strawberry-red);
 }
+
+
