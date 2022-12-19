@@ -1,0 +1,14 @@
+{
+  "name": "interactive-card-details-form-main",
+  "version": "1.0.0",
+  "description": "Challenge from Front-End Mentor",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Rhuan Lopes",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.57.0"
+  }
+}
